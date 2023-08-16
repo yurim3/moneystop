@@ -1,5 +1,6 @@
 // Signup.js (프론트엔드)
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Signup.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import loginLogoB from './images/loginLogoB.png';
@@ -47,7 +48,9 @@ const Signup = () => {
           <button className='btn btn-success' onClick={handleSignUp}>
             회원가입
           </button>
-          <a href="/" className='login-btn'>로그인</a>
+          <p>
+            이미 계정이 있으신가요?  <Link to="/login" className='signup-link'>로그인</Link>
+          </p>
         </form>
       </div>
     </div>
