@@ -1,0 +1,128 @@
+.transaction-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 490px;
+    height: 620px;
+    margin: 0 auto;
+    gap: 24px;
+}
+
+.button-container {
+    display: flex;
+    gap: 30px;
+    margin-left: 24px;
+}
+
+.transaction-button {
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+}
+
+.transaction-button.selected {
+    background-color: #598c58;
+    color: #F9F9F9;
+}
+
+.transaction-button:not(.selected) {
+    background-color: #f1f1f1;
+    color: #696969;
+}
+
+.transaction-button:focus {
+    outline: none;
+}
+
+.date-label {
+    font-size: 16px;
+    color: #808080;
+    margin-top: 48px;
+    margin-left: 24px;
+    display: inline-block;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.date-picker, .asset-select {
+    width: 310px;
+    height: 32px;
+    margin-left: 100px;
+    padding-left: 8px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.date-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.amount-label, .category-label, .asset-label, .note-label{
+    font-size: 16px;
+    color: #808080;
+    margin-top: 10px;
+    margin-left: 24px;
+    display: inline-block;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.amount-input {
+    width: 310px;
+    height: 32px;
+    margin-left: 90px;
+    padding-left: 8px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.amount-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.category-select {
+    width: 310px;
+    height: 32px;
+    margin-left: 68px;
+    padding-left: 8px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.note-input {
+    width: 310px;
+    margin-left: 100px;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.note-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.save-button {
+    width: 80px;
+    height: 40px;
+    background-color: #598c58;
+    color: #F9F9F9;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    align-self: flex-end;
+    margin-top: 24px;
+    margin-right: 24px;
+}

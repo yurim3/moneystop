@@ -1,7 +1,10 @@
-// server.js (백엔드)
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
 const oracledb = require('oracledb');
+const app = express();
+const port = 3000;
+
+oracledb.initOracleClient({ libDir: 'C:\\oracle\\instantclient_19_11' });
 
 const dbConfig = {
   user: 'ACB',
@@ -9,28 +12,28 @@ const dbConfig = {
   connectString: 'localhost:1521/xe',
 };
 
-app.use(express.json());
+app.use(bodyParser.json());
 
-app.post('/signup', async (req, res) => {
+app.post('/api/save-expense', async (req, res) => {
   try {
-    const { newUserId, newPassword } = req.body;
+    const { date, amount, category, asset, note } = req.body;
 
     const connection = await oracledb.getConnection(dbConfig);
-    const insertQuery = `INSERT INTO 회원테이블 (아이디, 비밀번호) VALUES (:1, :2)`;
-    const insertParams = [newUserId, newPassword];
+    const result = await connection.execute(`
+      INSERT INTO expenses (date, amount, category, asset, note)
+      VALUES (:date, :amount, :category, :asset, :note)`,
+      [date, amount, category, asset, note]);
 
-    const result = await connection.execute(insertQuery, insertParams);
-
+    await connection.commit();
     await connection.close();
 
-    res.status(200).json({ message: '회원가입이 성공적으로 완료되었습니다.' });
-  } catch (err) {
-    console.error('오라클 DB 연결 오류:', err);
-    res.status(500).json({ error: '회원가입 중 오류가 발생하였습니다.' });
+    res.status(201).json({ message: 'Expense saved successfully' });
+  } catch (error) {
+    console.error('Error saving expense:', error);
+    res.status(500).json({ error: 'An error occurred while saving the expense' });
   }
 });
 
-const port = 5000;
 app.listen(port, () => {
-  console.log(`서버가 ${port} 포트에서 실행 중입니다.`);
+  console.log(`Server is listening on port ${port}`);
 });
