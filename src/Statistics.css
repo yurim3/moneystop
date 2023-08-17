@@ -1,0 +1,23 @@
+/* Statistics.css */
+.statistics-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 이미지를 화면 가운데로 정렬 */
+}
+
+.statistics-image {
+  max-width: 100%;
+  height: 100vh;
+}

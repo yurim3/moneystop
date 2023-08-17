@@ -19,6 +19,7 @@ const Login = () => {
         <div>
             <div className='login-container'>
                 <img src={loginLogoB} alt="로그인 로고" className='logo-image' />
+                <p className='login-label'>로그인</p>
                 <form>
                     <input type='id' className='form-control' id='exampleFormControlInput1' placeholder='아이디' value={id}
                         onChange={(e) => setId(e.target.value)} />
@@ -27,7 +28,7 @@ const Login = () => {
                     <button className='btn btn-success' onClick={handleLogin}>
                         로그인
                     </button>
-                    <p>
+                    <p className='memberque-label'>
                         회원이 아니신가요?  <Link to="/signup" className='signup-link'>회원가입</Link>
                     </p>
                 </form>

@@ -21,8 +21,10 @@ const Navigation = () => {
         <Link to="/transaction">
           <img src={recodeLogo} alt='수입 및 지출 내역 페이지 로고' className='nav-icon' />
         </Link>
-        <img src={statisticsLogo} alt='통계 페이지 로고' className='nav-icon' />
-      </div>
+        <Link to="/statistics">
+          <img src={statisticsLogo} alt='통계 페이지 로고' className='nav-icon' />
+        </Link>
+        </div>
     </div>
   );
 };

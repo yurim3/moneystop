@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
     margin-top: 6%;
     font-size: 16px;
 }
@@ -13,6 +13,11 @@
 .logo-image {
     width: 110px;
     height: 110px;
+}
+
+.login-label {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 form {
@@ -49,4 +54,8 @@ p {
 
 .form-control, .btn {
     width: 400px;
+}
+
+.memberque-label {
+    margin-top: 16px;
 }

@@ -5,7 +5,7 @@
     width: 490px;
     height: 620px;
     margin: 0 auto;
-    gap: 24px;
+    gap: 16px;
 }
 
 .button-container {
@@ -41,7 +41,7 @@
 .date-label {
     font-size: 16px;
     color: #808080;
-    margin-top: 48px;
+    margin-top: 20px;
     margin-left: 24px;
     display: inline-block;
     width: fit-content;
@@ -99,6 +99,12 @@
     outline: none;
 }
 
+.category-select option,
+.asset-select option {
+    background-color: #598c58;
+    color: #f1f1f1;
+}
+
 .note-input {
     width: 310px;
     margin-left: 100px;
@@ -125,4 +131,20 @@
     align-self: flex-end;
     margin-top: 24px;
     margin-right: 24px;
+}
+
+.date-container,
+.amount-container,
+.category-container,
+.asset-container,
+.note-container {
+    margin-bottom: 16px; /* 필드 사이 간격을 늘리기 위한 간격 추가 */
+}
+
+.inout-label {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    justify-content: left;
+    margin-left: 20px;
 }

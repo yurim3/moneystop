@@ -30,6 +30,7 @@ const Signup = () => {
     <div>
       <div className='signup-container'>
         <img src={loginLogoB} alt="로그인 로고" className='logo-image' />
+        <p className='signup-label'>회원가입</p>
         <form>
           <input
             type='text'
@@ -48,7 +49,7 @@ const Signup = () => {
           <button className='btn btn-success' onClick={handleSignUp}>
             회원가입
           </button>
-          <p>
+          <p className='memberqeu-label'>
             이미 계정이 있으신가요?  <Link to="/login" className='signup-link'>로그인</Link>
           </p>
         </form>
